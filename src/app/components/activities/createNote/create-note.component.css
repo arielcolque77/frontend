@@ -1,0 +1,17 @@
+.example-form {
+  min-width: 150px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.programa {
+  width: 40%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.btn-space{
+   margin-right: 10px;
+}

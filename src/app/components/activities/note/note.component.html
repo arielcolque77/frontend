@@ -1,0 +1,52 @@
+
+<div class="ms-3 me-3">
+    <div class="row">
+        <div class="col-md-6  ">
+            <div class="card shadow-lg p-3 mb-0 bg-body rounded">
+                <h3 class="card-header"><strong>Actividades pendientes</strong></h3>
+            <div class="card-body m-0">
+            <div class="d-grid gap-3">
+            <cdk-virtual-scroll-viewport appendOnly style="height: 400px" itemSize="10" class="example-viewport ">                
+                <div class=" bg-light shadow-lg bg-body rounded m-2" *cdkVirtualFor="let prog of pendiente" >
+                    <div class="row">
+                        <div class="col-md-9 ">
+                            <div class="m-2">
+                                {{prog.description}}
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="text-align: right;">
+                            <button *ngIf="prog.status_activity == 'pending_activity'" (click)="updateNote(prog.id)" mat-icon-button><mat-icon aria-hidden="false" class="text-success" aria-label="Example home icon">check</mat-icon></button>
+                            <button mat-icon-button (click)="downNote(prog.id)"><mat-icon aria-hidden="false" class="text-danger" aria-label="Example home icon">delete</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </cdk-virtual-scroll-viewport>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-lg p-3 mb-0 bg-body rounded">
+            <h3 class="card-header"><strong>Actividades realizadas durante el dia</strong></h3>
+            <div class="card-body m-0">
+            <div class="d-grid gap-3">
+            <cdk-virtual-scroll-viewport appendOnly style="height: 400px" itemSize="10" class="example-viewport">                
+                <div class=" bg-light shadow-lg bg-body rounded m-2" *ngFor="let prog of resuelto">
+                    <div class="row">
+                        <div class="col-md-9 ">
+                            <div class="m-2">
+                                {{prog.description}}
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="text-align: right;">
+                        <button *ngIf="prog.status_activity == 'resolved_activity'" mat-icon-button><mat-icon aria-hidden="false" class="text-success" aria-label="Example home icon">task_alt</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </cdk-virtual-scroll-viewport>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

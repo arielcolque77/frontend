@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let dato of listProyect">
+            <mat-card class="example-card border border-2 text-center">
+                <mat-card-title><h3>{{dato.name}}</h3></mat-card-title>
+                <mat-card-content>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-flat-button class="bg-success text-white" href="note/{{dato.id}}">Ver notas</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

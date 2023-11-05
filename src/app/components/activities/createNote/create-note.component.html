@@ -1,0 +1,27 @@
+<div class="container">
+<div class="card shadow-lg p-3 mb-5 bg-body rounded">
+    <h3 class="card-header"><strong>Generar una nueva actividad</strong></h3>
+    <div class="card-body">
+        <div class="container">
+            <form [formGroup]="noteForm">
+                <mat-form-field appearance="fill" class="programa">
+                <mat-label>Selecciona un proyecto</mat-label>
+                <mat-select formControlName="proyect" required >
+                    <mat-option [value]="pro.id" *ngFor="let pro of proyectos">{{pro.name}}</mat-option>
+                </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Agregar una nueva actividad</mat-label>
+                    <textarea matInput formControlName="description" required></textarea>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button class="btn-space" color="primary" (click)="createNote()">Aceptar</button>
+                    <a type="button" mat-raised-button color="warn" [routerLink]="['/proyectos']">Ir a proyectos</a>
+                </div>
+                <div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
